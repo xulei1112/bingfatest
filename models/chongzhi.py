@@ -12,13 +12,14 @@ app_ctx = app.app_context()
 app_ctx.push()
 
 
+
 class BaseConfig():
     DEBUG = True
     # 获取项目目录
     APP_PATH = os.path.dirname(__file__)
 
     # mysql数据库url
-    app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:123456@124.16.111.179:3306/flask1227?charset=utf8"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:123456@192.168.133.128:3306/flask1227?charset=utf8"
 
 
 app.config.from_object(BaseConfig)
@@ -36,4 +37,3 @@ if __name__ == '__main__':
     # 删除所有表
     # db.drop_all()
     db.create_all()   # 创建所有的表
-
